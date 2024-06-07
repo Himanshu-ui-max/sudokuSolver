@@ -90,16 +90,16 @@
 }
 @media screen and (max-width : 800px) {
   .bigerBox{
-    height: 270px;
-    width: 270px;
+    height: 360px;
+    width: 360px;
   }
   .smallBox{
-    height: 90px;
-    width: 90px;
+    height: 120px;
+    width: 120px;
   }
   .boxes{
-    height: 28px;
-    width: 30px;
+    height: 38px;
+    width: 40px;
   }
   .number{
     width: 25px;
