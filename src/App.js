@@ -193,7 +193,7 @@ function App() {
   return (
     <div className="App">
       <div className="header">
-        <h1>Welcome to Sudoku Solver</h1>
+        <h1>Welcome to HIMS' Sudoku Solver</h1>
       </div>
       <div className="numberBox">
         <button className="number" disabled={helpingEvent?false:true} onClick={(e) => { handleButton(e.target.id) }} id="one">1</button>
