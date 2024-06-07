@@ -1,7 +1,7 @@
 import './App.css';
 import { useState } from 'react';
 function App() {
-  const [helpingEvent, setHelpingEvent] = useState({});
+  const [helpingEvent, setHelpingEvent] = useState();
   const handleBox = (event) => {
     console.group(event.target.id)
     setHelpingEvent(event);
@@ -143,16 +143,16 @@ function App() {
         <h1>Welcome to Sudoku Solver</h1>
       </div>
       <div className="numberBox">
-        <div className="number" onClick={(e) => { handleButton(e.target.id) }} id="one">1</div>
-        <div className="number" onClick={(e) => { handleButton(e.target.id) }} id="two">2</div>
-        <div className="number" onClick={(e) => { handleButton(e.target.id) }} id="three">3</div>
-        <div className="number" onClick={(e) => { handleButton(e.target.id) }} id="four">4</div>
-        <div className="number" onClick={(e) => { handleButton(e.target.id) }} id="five">5</div>
-        <div className="number" onClick={(e) => { handleButton(e.target.id) }} id="six">6</div>
-        <div className="number" onClick={(e) => { handleButton(e.target.id) }} id="seven">7</div>
-        <div className="number" onClick={(e) => { handleButton(e.target.id) }} id="eight">8</div>
-        <div className="number" onClick={(e) => { handleButton(e.target.id) }} id="nine">9</div>
-        <div className="number" onClick={(e) => { handleButton(e.target.id) }} id="cross">{"<-"}</div>
+        <button className="number" disabled={helpingEvent?false:true} onClick={(e) => { handleButton(e.target.id) }} id="one">1</button>
+        <button className="number" disabled={helpingEvent?false:true} onClick={(e) => { handleButton(e.target.id) }} id="two">2</button>
+        <button className="number" disabled={helpingEvent?false:true} onClick={(e) => { handleButton(e.target.id) }} id="three">3</button>
+        <button className="number" disabled={helpingEvent?false:true} onClick={(e) => { handleButton(e.target.id) }} id="four">4</button>
+        <button className="number" disabled={helpingEvent?false:true} onClick={(e) => { handleButton(e.target.id) }} id="five">5</button>
+        <button className="number" disabled={helpingEvent?false:true} onClick={(e) => { handleButton(e.target.id) }} id="six">6</button>
+        <button className="number" disabled={helpingEvent?false:true} onClick={(e) => { handleButton(e.target.id) }} id="seven">7</button>
+        <button className="number" disabled={helpingEvent?false:true} onClick={(e) => { handleButton(e.target.id) }} id="eight">8</button>
+        <button className="number" disabled={helpingEvent?false:true} onClick={(e) => { handleButton(e.target.id) }} id="nine">9</button>
+        <button className="number" disabled={helpingEvent?false:true} onClick={(e) => { handleButton(e.target.id) }} id="cross">{"<-"}</button>
       </div>
       <div className="container">
 
@@ -160,7 +160,7 @@ function App() {
           <div className="rowDivisons">
             <div className="smallBox">
               <div className="smallerRowDivison">
-                <div className="boxes box1 " id="0 0" onClick={(e) => { handleBox(e) }} value={arr[0][0]}>{arr[0][0]}</div>
+                <div className="boxes box1 " id="0 0" onClick={(e) => { handleBox(e) }}>{arr[0][0]}</div>
                 <div className="boxes" id="0 1" onClick={(e) => { handleBox(e) }}>{arr[0][1]}</div>
                 <div className="boxes" id="0 2" onClick={(e) => { handleBox(e) }}>{arr[0][2]}</div>
               </div>
@@ -318,7 +318,7 @@ function App() {
           </div>
 
         </div>
-        <button className='starter' onClick={()=>{solver(arr)}}>Start</button>
+        <button className='starter' onClick={()=>{solver(arr); console.log(arr)}}>Start</button>
       </div>
     </div>
   );
