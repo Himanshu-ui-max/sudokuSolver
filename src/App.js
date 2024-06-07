@@ -137,6 +137,58 @@ function App() {
     }
     return false;
   }
+  const validation2 = (board, x, y, num) => {
+    // checking in row
+    for (let i = 0; i < 9; i++) {
+      if (board[y][i] === num && i !== x) {
+        return false;
+      }
+    }
+    // checking in column
+    for (let i = 0; i < 9; i++) {
+      if (board[i][x] === num && i !== y) {
+        return false;
+      }
+    }
+    // finding block to check
+    const lowerX = Math.floor(x / 3) * 3;
+    const lowerY = Math.floor(y / 3) * 3;
+
+    // checking in block
+    for (let i = lowerY; i < lowerY + 3; i++) {
+      for (let j = lowerX; j < lowerX + 3; j++) {
+        if (board[i][j] === num && (i !== y || j !== x)) {
+          return false;
+        }
+      }
+    }
+    return true;
+  };
+
+  const isValidSudoku = (board) => {
+    for (let y = 0; y < 9; y++) {
+      for (let x = 0; x < 9; x++) {
+        if (board[y][x] !== '.') {
+          if (!validation2(board, x, y, board[y][x])) {
+            return false;
+          }
+        }
+      }
+    }
+    return true;
+  };
+  const handleReset=()=>{
+    let Arr = [[".", ".", ".", ".", ".", ".", ".", ".", "."],
+    [".", ".", ".", ".", ".", ".", ".", ".", "."],
+    [".", ".", ".", ".", ".", ".", ".", ".", "."],
+    [".", ".", ".", ".", ".", ".", ".", ".", "."],
+    [".", ".", ".", ".", ".", ".", ".", ".", "."],
+    [".", ".", ".", ".", ".", ".", ".", ".", "."],
+    [".", ".", ".", ".", ".", ".", ".", ".", "."],
+    [".", ".", ".", ".", ".", ".", ".", ".", "."],
+    [".", ".", ".", ".", ".", ".", ".", ".", "."]];
+    setArr([...Arr]);
+  }
   return (
     <div className="App">
       <div className="header">
@@ -318,7 +370,10 @@ function App() {
           </div>
 
         </div>
-        <button className='starter' onClick={()=>{solver(arr); console.log(arr)}}>Start</button>
+        <div>
+          <button className='starter' onClick={()=>{isValidSudoku(arr)?solver(arr):alert("Not a valid Sudoku puzzle!!!")}}>Solve</button>
+          <button className='starter' onClick={()=>{handleReset()}}>Reset</button>
+        </div>
       </div>
     </div>
   );

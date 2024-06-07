@@ -84,3 +84,33 @@
   height: 80vh;
   width: 100vw;
 }
+@media screen and (max-width : 800px) {
+  .bigerBox{
+    height: 270px;
+    width: 270px;
+  }
+  .smallBox{
+    height: 90px;
+    width: 90px;
+  }
+  .boxes{
+    height: 28px;
+    width: 30px;
+  }
+  .number{
+    width: 25px;
+    height: 5vh;
+  }
+  .numberBox{
+    margin-top: 10px;
+  }
+  h1{
+    margin-top: 25px;
+    font-size: 1.5rem;
+  }
+  .starter{
+    width: 60px;
+    height: 30px;
+    font-size: large;
+  }
+}
