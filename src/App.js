@@ -3,7 +3,8 @@ import { useState } from 'react';
 function App() {
   const [helpingEvent, setHelpingEvent] = useState();
   const handleBox = (event) => {
-    console.group(event.target.id)
+    // console.group(event.target.style)
+    event.target.style.backgroundColor  = "#2134f33b";
     setHelpingEvent(event);
   }
   const [arr, setArr] = useState([[".", ".", ".", ".", ".", ".", ".", ".", "."],
@@ -62,7 +63,7 @@ function App() {
       // helpingEvent.target.innerHTML = "";
     }
     setArr([...Arr]);
-    // helpingEvent.target.innerHTML = arr[y][x];
+    helpingEvent.target.style.backgroundColor = "white";
     console.log(arr);
   }
   const validation = (board, x, y, num) => {
