@@ -223,9 +223,9 @@ function App() {
                 <div className="boxes" id="4 2" onClick={(e) => { handleBox(e) }}>{arr[4][2]}</div>
               </div>
               <div className="smallerRowDivison">
-                <div className="boxes" id=" 5 0" onClick={(e) => { handleBox(e) }}>{arr[5][0]}</div>
-                <div className="boxes" id=" 5 1" onClick={(e) => { handleBox(e) }}>{arr[5][1]}</div>
-                <div className="boxes" id=" 5 2" onClick={(e) => { handleBox(e) }}>{arr[5][2]}</div>
+                <div className="boxes" id="5 0" onClick={(e) => { handleBox(e) }}>{arr[5][0]}</div>
+                <div className="boxes" id="5 1" onClick={(e) => { handleBox(e) }}>{arr[5][1]}</div>
+                <div className="boxes" id="5 2" onClick={(e) => { handleBox(e) }}>{arr[5][2]}</div>
               </div>
             </div>
             <div className="smallBox">
